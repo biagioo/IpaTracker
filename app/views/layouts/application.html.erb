@@ -16,6 +16,7 @@
   <footer>
   <% if logged_in? %>
     <%= link_to "Log out", logout_path, method: :delete %>
+    <%= link_to "My Profile", user_path(current_user) %>
   <% else %>
     <%= link_to "Sign Up", new_user_path %>
     <%= link_to "Sign In", signin_path %>

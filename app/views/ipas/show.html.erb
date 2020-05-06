@@ -1,6 +1,11 @@
+<h3> Name: <%=@ipa.name%> </h3>
 <%= flash[:notice] %>
-<p> Name: <%=@ipa.name%> </p>
 <p> Brand: <%=@ipa.brand%> </p>
 <p> Size: <%=@ipa.size%>oz. </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
 <p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
+
+<h4> Reviews For this IPA </h4>
+<p> review title </p>
+<p> review content </p>
+<p> review username </p>
