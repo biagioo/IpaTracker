@@ -3,11 +3,11 @@ class UsersController < ApplicationController
     end
 
     def create
-        user = User.create(user_params)
-        if user.valid? 
+        @user = User.create(user_params)
+        if @user.valid? 
             flash[:notice] = "User creation was Successful!"
             #set_session
-            redirect_to user_path(user), flash[:notice]
+            redirect_to user_path(@user)
         else
             render :new
         end
@@ -27,6 +27,6 @@ class UsersController < ApplicationController
     private
 
     def user_params
-        params.require(:user).permit(:username, :password, :email, :bio)
+        params.permit(:username, :password, :email, :bio)
     end 
 end

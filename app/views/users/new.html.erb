@@ -14,9 +14,9 @@
     <%= f.text_area :bio %>
     <br>   
 
-    <% if @user.errors[:name].any? %>
+    <% if @user.errors.any? %>
     <ul>
-      <% @user.errors[:name].each do |message| %>
+      <% @user.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
     </ul>
