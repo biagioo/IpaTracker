@@ -1,0 +1,7 @@
+
+<%= flash[:notice] %>
+<p> Name: <%=@ipa.name%> </p>
+<p> Brand: <%=@ipa.brand%> </p>
+<p> Size: <%=@ipa.size%>oz. </p>
+<p> <%=link_to "See All IPA's", ipas_path%> </p>
+<p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
