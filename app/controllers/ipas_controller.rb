@@ -20,7 +20,13 @@ class IpasController < ApplicationController
     end
     
     def update
-
+        if @ipa.update(ipa_params)
+            @ipa.save
+            flash[:notice] = "Update Successful!"
+            redirect_to @ipa
+        else
+            render :edit
+        end
     end
 
     def destroy

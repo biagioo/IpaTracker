@@ -2,8 +2,9 @@
 <h3> Would you like to <%= link_to "Create a new IPA?", new_ipa_path %></h3>
 <ul>
 <% @ipas.each do |i| %>
-    <li> Name: <%= i.name %> </li>
-    <li> Brand: <%= i.brand %> </li>
-    <li> Size: <%= i.name %> </li>
+    <li> Name: <%= link_to i.name, ipa_path(i) %> </li>
+    <p> Brand: <%= i.brand %> </p>
+    <p> Size: <%= i.name %> </p>
+    <br>
     <% end %>
 </ul>
