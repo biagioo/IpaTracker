@@ -1,0 +1,2 @@
+class IpasController < ApplicationController
+end

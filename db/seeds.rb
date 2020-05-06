@@ -5,3 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+i = Ipa.create(name:"blonde ambition", brand: "great south bay brewery", size: 16)
+u = User.create(email: "test", password: "password", username:"testest", bio: "another test")
+r = Review.new(title: "test review", content: "test reviews")
+r.
