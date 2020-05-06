@@ -8,4 +8,6 @@
 i = Ipa.create(name:"blonde ambition", brand: "great south bay brewery", size: 16)
 u = User.create(email: "test", password: "password", username:"testest", bio: "another test")
 r = Review.new(title: "test review", content: "test reviews")
-r.
+r.user = u 
+r.ipa = i 
+r.save
