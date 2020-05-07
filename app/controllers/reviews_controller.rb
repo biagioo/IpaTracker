@@ -22,7 +22,6 @@ class ReviewsController < ApplicationController
     end
 
     def create
-        find_ipa
         @review = @ipa.reviews.create(review_params)
         if @review.valid? 
             @review.save
@@ -36,15 +35,23 @@ class ReviewsController < ApplicationController
     end
 
     def show
-       find_ipa
         @review = @ipa.reviews.find_by(id: params[:id])
     end
     
     def edit 
-
+        @review = Review.find_by(id: params[:id])
+        if params[:ipa_id] && current_user.id == @review.user_id 
+            find_ipa
+        end
     end 
 
     def update
+        @review = Review.find_by(id: params[:id])
+        if @review.update(review_params) && @review.valid?
+            redirect_to ipa_review_path(@ipa, @review)
+        else 
+            render :edit
+        end
     end
 
 
@@ -55,7 +62,7 @@ class ReviewsController < ApplicationController
     end
 
     def review_params
-        params.require(:review).permit(:title, :content, :user_id)
+        params.require(:review).permit(:title, :content, :user_id )
     end
 
 end
