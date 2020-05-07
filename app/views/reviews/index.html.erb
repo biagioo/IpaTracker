@@ -1,0 +1,11 @@
+<h2><%= @ipa.name %> Review's! </h2>
+
+<ul>
+<%= @reviews.each do |r|  %>
+    <h4> Title: <%= r.title %> </h4>
+    <li> Content: <%= r.content %> </;1>
+    <br>
+    <% end %>
+</ul>
+
+
