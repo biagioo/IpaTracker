@@ -4,6 +4,8 @@
 <p> Size: <%=@ipa.size%> oz. </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
 <p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
+<p> <%= link_to "Delete This IPA", ipa_path(@ipa), method: :delete %> </p>
+
 
 <h4> Reviews For this IPA </h4>
 <ul>

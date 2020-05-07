@@ -1,5 +1,5 @@
 class IpasController < ApplicationController
-    before_action :logged_in?, :current_ipa, except: [:new, :create]
+    before_action :logged_in?, :current_ipa, except: [:new, :create, :index]
     def index
         redirect_to new_user_path unless logged_in?
         @ipas = Ipa.all
@@ -34,6 +34,9 @@ class IpasController < ApplicationController
     end
 
     def destroy
+        current_ipa.destroy
+        flash[:notice] = "IPA Deleted!"
+        redirect_to ipas_path
     end
 
     private
