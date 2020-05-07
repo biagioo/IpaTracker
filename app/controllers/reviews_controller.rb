@@ -1,9 +1,9 @@
 class ReviewsController < ApplicationController
-    before_action :logged_in?, :current_user   
+    before_action :logged_in?, :current_user, :find_ipa  
 
     def index
         if params[:ipa_id]
-            @ipa = Ipa.find_by(id: params[:ipa_id]) 
+            find_ipa
             if @ipa 
                 @reviews = @ipa.reviews 
             else
@@ -16,13 +16,13 @@ class ReviewsController < ApplicationController
     
     def new 
         if params[:ipa_id]
-            @ipa = Ipa.find_by(id: params[:ipa_id]) 
+            find_ipa
             @review = @ipa.reviews.new(user_id: @user.id)
         end
     end
 
     def create
-        @ipa = Ipa.find_by(id: params[:ipa_id]) 
+        find_ipa
         @review = @ipa.reviews.create(review_params)
         if @review.valid? 
             @review.save
@@ -36,12 +36,23 @@ class ReviewsController < ApplicationController
     end
 
     def show
-        @ipa = Ipa.find_by(id: params[:ipa_id])
+       find_ipa
         @review = @ipa.reviews.find_by(id: params[:id])
+    end
+    
+    def edit 
+
+    end 
+
+    def update
     end
 
 
     private
+
+    def find_ipa
+        @ipa = Ipa.find_by(id: params[:ipa_id])
+    end
 
     def review_params
         params.require(:review).permit(:title, :content, :user_id)
