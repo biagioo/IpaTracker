@@ -1,3 +1,5 @@
 <h2>Review about <%= @ipa.name%> </h2> 
-<h4> <%= @review.title %> </h4>
+<h3> <%= @review.title %> </h3>
+<h4> Author: <%= @review.user.username%> link this </h4>
 <p> <%= @review.content%> </p>
+<%= link_to @ipa.name, ipa_path(@ipa)%>

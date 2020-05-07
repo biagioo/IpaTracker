@@ -6,6 +6,7 @@
 <p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
 
 <h4> Reviews For this IPA </h4>
+<p> <%= link_to "Write a New Review", new_ipa_review_path(@ipa)%> </p>
 <ul>
 <% @reviews.each do |r| %>
     <li> <%= link_to r.title, ipa_review_path(@ipa)%></li>
