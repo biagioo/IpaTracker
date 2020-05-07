@@ -54,6 +54,13 @@ class ReviewsController < ApplicationController
         end
     end
 
+    def destroy
+        @review = Review.find_by(id: params[:id])
+        if params[:ipa_id] && current_user.id == @review.user_id 
+            @review.destroy
+            redirect_to ipa_path(@ipa)
+        end
+    end
 
     private
 
