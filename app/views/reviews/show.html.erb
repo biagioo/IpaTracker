@@ -6,5 +6,5 @@
 <%= link_to @ipa.name, ipa_path(@ipa)%><br>
 <% if current_user.id == @review.user_id %>
     <%= link_to "Edit This Review", edit_ipa_review_path(@ipa, @review)%><br>
-    <%= link_to "Delete This Review", ipa_review_path(@ipa, @review), method: :delete%>
+    <%= link_to "Delete This Review", ipa_review_path(@ipa, @review), method: :delete %>
     <% end %>

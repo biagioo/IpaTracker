@@ -5,4 +5,8 @@
 <p> Bio: <%=@user.bio%> </p>
 <p> <%=link_to "Edit My Info", edit_user_path(@user)%> </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
-<p> See My IPA's </p>
+<p> My IPA's </p>
+<ul>
+<% @user.reviews.each do |r| %>
+   <li> <%= link_to r.ipa.name, ipa_path(r.ipa)%> </li>
+<% end %>

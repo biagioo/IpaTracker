@@ -1,11 +1,12 @@
 <h2><%= @ipa.name %> Review's! </h2>
 
 <ul>
-<%= @reviews.each do |r|  %>
-    <h4> Title: <%= r.title %> </h4>
-    <li> Content: <%= r.content %> </;1>
+<% @reviews.each do |r|  %>
+    <h4> Title: <%= link_to r.title, ipa_review_path(@ipa, r) %> </h4>
+    <li> Content: <%= r.content %> </li>
     <br>
     <% end %>
 </ul>
+
 
 
