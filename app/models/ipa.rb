@@ -4,6 +4,6 @@ class Ipa < ApplicationRecord
     validates :name, uniqueness: true
     validates :name, presence: true
 
-    scope :recent, -> { order(:created_at, :desc) }
+    scope :recent, -> { order(created_at: :desc) }
 
 end
