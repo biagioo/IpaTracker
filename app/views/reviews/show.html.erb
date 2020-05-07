@@ -3,7 +3,7 @@
 <h4> Author: <%= @review.user.username%> link this </h4>
 <p> Content: <%= @review.content%> </p>
 
-<%= link_to @ipa.name, ipa_path(@ipa)%>
+<%= link_to @ipa.name, ipa_path(@ipa)%><br>
 <% if current_user.id == @review.user_id %>
     <%= link_to "Edit This Review", edit_ipa_review_path(@ipa, @review)%>
     <% end %>

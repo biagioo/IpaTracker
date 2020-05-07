@@ -1,14 +1,14 @@
 <h3> Name: <%=@ipa.name%> </h3>
 <%= flash[:notice] %>
 <p> Brand: <%=@ipa.brand%> </p>
-<p> Size: <%=@ipa.size%>oz. </p>
+<p> Size: <%=@ipa.size%> oz. </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
 <p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
 
 <h4> Reviews For this IPA </h4>
 <ul>
 <% @reviews.each do |r| %>
-    <li> <%= link_to r.title, ipa_review_path(@ipa)%></li>
+    <li> <%= link_to r.title, ipa_review_path(@ipa, r)%></li>
     <br>
     <% end %>
 
