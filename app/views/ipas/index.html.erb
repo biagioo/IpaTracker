@@ -1,11 +1,15 @@
 <h1> All IPA's </h1>
 <%= flash[:notice] %>
-<h3> Would you like to <%= link_to "Create a new IPA?", new_ipa_path %></h3>
+<h3> Would you like to <%= link_to "Create a new IPA?", new_ipa_path %></h3><br>
+<h4> IPA's are listed by most recently added! </h4>
 <ul>
 <% @ipas.each do |i| %>
     <li> Name: <%= link_to i.name, ipa_path(i) %> </li>
     <p> Brand: <%= i.brand %> </p>
     <p> Size: <%= i.size %> </p>
+    <p> Created at: <%= i.created_at.strftime("%b %e, %l:%M %p") %> </p>
     <br>
     <% end %>
 </ul>
+
+
