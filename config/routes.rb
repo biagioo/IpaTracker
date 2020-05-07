@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :ipas
-  resources :users, except: :index
+  resources :ipas do 
+    resources :reviews
+  end
+  resources :users, except: :index 
   get '/signin', to: 'sessions#new'
   post '/signin', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
