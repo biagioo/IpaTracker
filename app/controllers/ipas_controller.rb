@@ -28,6 +28,10 @@ class IpasController < ApplicationController
             render :edit
         end
     end
+    
+    def show
+        @reviews = @ipa.reviews
+    end
 
     def destroy
     end

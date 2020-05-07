@@ -7,11 +7,16 @@ class ReviewsController < ApplicationController
             if @ipa 
                 @reviews = @ipa.reviews 
             else
-                redirect_to ipas_path, alert: "Ipa not found"
+                redirect_to ipas_path
             end
         else
             redirect_to ipas_path
         end
+    end
+
+    def show
+        @ipa = Ipa.find_by(id: params[:ipa_id])
+        @review = @ipa.reviews.find_by(id: params[:id])
     end
 
 end
