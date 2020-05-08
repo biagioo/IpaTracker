@@ -18,7 +18,7 @@
 <% else %>
    <ul>
       <% @user.reviews.each do |r| %>
-         <%= link_to r.ipa.name, ipa_path(r.ipa)%> 
+         <li> <%= link_to r.ipa.name, ipa_path(r.ipa)%> </li>
       <% end %>
    </ul>
 <% end %>

@@ -15,7 +15,6 @@
 <% else %>
     <% @reviews.each do |r| %>
         <h4> Title: <%= link_to r.title, ipa_review_path(@ipa, r)%></h4>
-        <br>
     <% end %>
     <p> <%= link_to "Write a New Review", new_ipa_review_path(@ipa)%> </p>
 <% end %>

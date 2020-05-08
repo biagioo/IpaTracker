@@ -15,7 +15,7 @@ class ReviewsController < ApplicationController
             @ipa = @review.ipa
             redirect_to ipa_review_path(@ipa, @review)
         else
-            byebug
+            render :new
         end
     end
 

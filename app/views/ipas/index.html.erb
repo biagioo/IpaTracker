@@ -9,9 +9,11 @@
 <ul>
 <% @ipas.each do |i| %>
     <h4> Name: <%= link_to i.name, ipa_path(i) %> </h4>
-    <p> Brand: <%= i.brand %> </p>
-    <p> Size: <%= i.size %> oz.</p>
-    <p> Created at: <%= i.created_at.strftime("%b %e, %l:%M %p") %> </p>
+    <li>  Brand: <%= i.brand %> </li>
+    <br>
+    <li>  Size: <%= i.size %> oz. </li>
+    <br>
+    <li>  Created at: <%= i.created_at.strftime("%b %e, %l:%M %p") %>  </li>
     <br>
     <% end %>
 </ul>
