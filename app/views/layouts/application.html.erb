@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>IpaTracker</title>
+    <title>IPA Reviewer</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -19,6 +19,7 @@
     <%= button_to "Log out", logout_path, method: :delete %>
     <%= button_to "My Profile", user_path(current_user), method: :get %>
     <%= button_to "All IPAs", ipas_path, method: :get%>
+    <%= button_to "Home Page", root_path, method: :get%>
   <% else %>
     <%= link_to "Sign Up", new_user_path %>
     <%= link_to "Sign In", signin_path %>

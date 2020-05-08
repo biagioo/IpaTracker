@@ -17,8 +17,6 @@ class ReviewsController < ApplicationController
         else
             byebug
         end
-
-       
     end
 
     def show
