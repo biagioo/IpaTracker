@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-    before_action :logged_in?, :current_user, :find_ipa  
+    before_action :logged_in?, :current_user, :find_ipa, :not_authorized  
     
     def new 
         if params[:ipa_id]

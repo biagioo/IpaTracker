@@ -1,5 +1,7 @@
 class IpasController < ApplicationController
     before_action :logged_in?, :current_ipa, except: [:new, :create, :index]
+    before_action :not_authorized
+    
     def index
         redirect_to new_user_path unless logged_in?
         @ipas = Ipa.recent
