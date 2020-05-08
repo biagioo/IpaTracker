@@ -9,10 +9,15 @@
 <% end %>
 
 <h4> Reviews For this IPA </h4>
-<ul>
-<% @reviews.each do |r| %>
-    <li> <%= link_to r.title, ipa_review_path(@ipa, r)%></li>
-    <br>
-    <% end %>
-</ul>
-<p> <%= link_to "Write a New Review", new_ipa_review_path(@ipa)%> </p>
+<% if @reviews.empty? %>
+    <p> There are no reviews for this IPA yet.</p>
+    <p> <%= link_to "Click here to write one!", new_ipa_review_path(@ipa)%> </p>
+<% else %>
+    <ul>
+        <% @reviews.each do |r| %>
+            <li> <%= link_to r.title, ipa_review_path(@ipa, r)%></li>
+            <br>
+        <% end %>
+    </ul>
+    <p> <%= link_to "Write a New Review", new_ipa_review_path(@ipa)%> </p>
+<% end %>
