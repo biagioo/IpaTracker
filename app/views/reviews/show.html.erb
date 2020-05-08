@@ -1,6 +1,10 @@
 <h2>Review about <%= @ipa.name%> </h2> 
 <h3> Title: <%= @review.title %> </h3>
-<h4> Author: <%= @review.user.username%>  </h4>
+<% if !@review.user.nil? %>
+    <h4> Author: <%= @review.user.username%>  </h4>
+<% else %>
+<h4> Author: This user's account has been deleted. </h4>
+<% end %>
 <p> Content: <%= @review.content%> </p>
 
 <%= link_to @ipa.name, ipa_path(@ipa)%><br>
