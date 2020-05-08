@@ -34,7 +34,6 @@ class IpasController < ApplicationController
     end
     
     def destroy
-        destroy_reviews
         current_ipa.destroy
         flash[:notice] = "IPA Deleted!"
         redirect_to ipas_path
@@ -51,9 +50,4 @@ class IpasController < ApplicationController
         params.require(:ipa).permit(:name, :brand, :size)
     end
     
-    def destroy_reviews
-        current_ipa.reviews.each do |r|
-            r.destroy
-        end
-    end
 end

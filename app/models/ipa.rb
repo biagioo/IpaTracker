@@ -1,9 +1,8 @@
 class Ipa < ApplicationRecord
-    has_many :reviews
+    has_many :reviews, :dependent => :delete_all
     has_many :users, through: :reviews
-    validates :name, uniqueness: true
+    validates :name, :uniqueness => true, :length => {:minimum => 5}
     validates :name, presence: true
-    validates :name, length: { is: 5 }
 
     scope :recent, -> { order(created_at: :desc) }
     
