@@ -14,7 +14,7 @@
 <p> My IPA's </p>
 
 <% if @user.reviews.empty? %>
-   <p> Looks like you haven't tried any IPAs yet. Try one and write a review to add IPAs to this list!</p>
+   <p> Looks like you haven't tried any IPAs yet. <%=link_to "Try one", ipas_path%> and write a review to add IPAs to this list!</p>
 <% else %>
    <ul>
       <% @user.reviews.each do |r| %>
