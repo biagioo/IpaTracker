@@ -3,9 +3,9 @@
 <p> Brand: <%=@ipa.brand%> </p>
 <p> Size: <%=@ipa.size%> oz. </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
-<p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
 <% if @user.admin %>
     <p> <%= link_to "Delete This IPA", ipa_path(@ipa), method: :delete %> </p>
+    <p> <%=link_to "Edit This Ipa", edit_ipa_path(@ipa)%> </p>
 <% end %>
 
 <h4> Reviews For this IPA </h4>
