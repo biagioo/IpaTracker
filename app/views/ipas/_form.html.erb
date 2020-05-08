@@ -1,0 +1,25 @@
+<%= form_for @ipa do |f| %>
+    <%= f.label :name %> 
+    <%= f.text_field :name %>
+    <br>
+    <%= f.label :brand %> 
+    <%= f.text_field :brand %>
+    <br>
+    <%= f.label "Size in Ounces" %> 
+    <%= f.text_field :size %>
+    <br>   
+
+    <% if @ipa.errors.any? %>
+    <ul>
+      <% @ipa.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+    <% end %>
+
+  <br>
+    <%= f.submit %>
+  <% end %>
+
+  
+

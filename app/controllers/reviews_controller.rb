@@ -1,19 +1,5 @@
 class ReviewsController < ApplicationController
     before_action :logged_in?, :current_user, :find_ipa  
-
-    def index
-        # unnecessary ????
-        if params[:ipa_id]
-            find_ipa
-            if @ipa 
-                @reviews = @ipa.reviews 
-            else
-                redirect_to ipas_path
-            end
-        else
-            redirect_to ipas_path
-        end
-    end
     
     def new 
         if params[:ipa_id]

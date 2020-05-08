@@ -1,24 +1,2 @@
 <h1> Edit Review for <%= @ipa.name %> </h1>
-
-<%= form_for [@ipa, @review] do |f| %>
-    
-    <%= f.hidden_field :user_id, :value => current_user.id%>
-
-    <%= f.label :title %> 
-    <%= f.text_field :title, value: @review.title %>
-    <br>
-    <%= f.label :content %> 
-    <%= f.text_area :content %>
-    <br>   
-
-    <% if @review.errors.any? %>
-    <ul>
-      <% @review.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-    </ul>
-    <% end %>
-
-  <br>
-    <%= f.submit %>
-  <% end %>
+<%= render partial: 'form' %>  
