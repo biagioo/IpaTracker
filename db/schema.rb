@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_06_122446) do
+ActiveRecord::Schema.define(version: 2020_05_08_115803) do
 
   create_table "ipas", force: :cascade do |t|
     t.string "name"
@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 2020_05_06_122446) do
     t.text "bio"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "admin", default: false
   end
 
 end
