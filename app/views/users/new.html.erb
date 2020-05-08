@@ -13,7 +13,10 @@
     <%= f.label :bio %> 
     <%= f.text_area :bio %>
     <br>   
-
+    <%= f.label :admin %>
+    <%= f.check_box :admin %>
+    <br>
+    
     <% if @user.errors.any? %>
     <ul>
       <% @user.errors.full_messages.each do |message| %>

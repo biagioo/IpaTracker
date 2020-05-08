@@ -1,8 +1,14 @@
-<h1> Welcome, <%=@user.username%>! </h1>
+<% if @user.admin %>
+   <h1> Welcome Admin <%=@user.username%>! </h1>
+<% else %> 
+   <h1> Welcome, <%=@user.username%>! </h1>
+<% end %>
+
 <%= flash[:notice] %>
 <h2> My Info </h2>
 <p> Email: <%=@user.email%> </p>
 <p> Bio: <%=@user.bio%> </p>
+
 <p> <%=link_to "Edit My Info", edit_user_path(@user)%> </p>
 <p> <%=link_to "See All IPA's", ipas_path%> </p>
 <p> My IPA's </p>
