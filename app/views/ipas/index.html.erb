@@ -1,4 +1,4 @@
-<% if @user.admin %>
+<% if admin? %>
    <h1> Welcome Admin <%=@user.username%>, here is the current IPA list! </h1>
 <% else %> 
    <h1> Welcome, <%=@user.username%>, here is the current IPA list! </h1>
