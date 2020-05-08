@@ -1,24 +1,7 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my IPA reviewer app. It allows you to create IPA's, and review them with a regular account. If you decide to sign up as a Admin, you will have the ability to delete IPA's.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To get this app running, fork and clone this repository and be sure to run bundle install.
+After that, type 'rails s' in the terminal and migrate over to your browser and go to localhost:3000.
+Sign up/sign in and enjoy!
