@@ -3,4 +3,5 @@ class Review < ApplicationRecord
     belongs_to :ipa
     validates :title, uniqueness: true
     validates :title, presence: true
+    validates :content, length: { is: 5 }
 end
