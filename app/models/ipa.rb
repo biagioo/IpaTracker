@@ -7,4 +7,20 @@ class Ipa < ApplicationRecord
     scope :recent, -> { order(created_at: :desc) }
     
 
+    # def self.search(name)
+    #     # byebug
+    #     if name
+    #         ipa_find = Ipa.find_by(name: name)
+    #         if ipa_find
+    #             self.where(ipa_id: ipa_find)
+    #         else 
+                
+    #             @ipas = Ipa.all 
+
+    #         end
+    #     else
+    #         ipas = Ipa.all
+    #     end
+    # end
+
 end

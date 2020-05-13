@@ -5,6 +5,13 @@
 <% end %>
 <%= flash[:notice] %>
 <h3> Would you like to <%= link_to "Create a new IPA?", new_ipa_path %></h3><br>
+
+<%= form_tag ipas_path, method: :get do %>
+   <%= label_tag(:search, "Search for IPAs here:")%>
+   <%= text_field_tag :name, params[:name] %>
+   <%= submit_tag("Search", :name => nil)%>
+<% end %>
+
 <h4> IPA's are listed by most recently added! </h4>
 <ul>
 <% @ipas.each do |i| %>

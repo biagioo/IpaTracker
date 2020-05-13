@@ -4,7 +4,11 @@ class IpasController < ApplicationController
     
     def index
         redirect_to new_user_path unless logged_in?
-        @ipas = Ipa.recent
+        if params[:name]
+            @ipas = Ipa.where('name LIKE ?', "%#{params[:name]}%")
+        else
+            @ipas = Ipa.recent
+        end
     end
 
     def new 
