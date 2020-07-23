@@ -4,7 +4,9 @@ Check out the demo [video](https://drive.google.com/file/d/1W6ulL9hALxvYUVwB-zbY
 
 ## Functionality
 
-The IPA Reviewer allows you to create IPA's, and review them with a regular account. If you decide to sign up as a Admin, you will have the ability to delete IPA's and reviews.
+The IPA Reviewer allows you to create IPA's, and review them with a regular account. 
+If you decide to sign up as a Admin, you will have the ability to delete IPA's and reviews.
+
 
 ## Installation
 
